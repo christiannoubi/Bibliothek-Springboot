@@ -1,5 +1,14 @@
 package de.adorsys.bibliothek.domain;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+import javax.persistence.Entity;
+
+@Entity
+@EqualsAndHashCode
+@ToString
+
 public class MedienVerwaltung {
 
     final static int MAX_MEDIEN_ANZ = 100000;

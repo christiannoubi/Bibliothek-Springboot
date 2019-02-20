@@ -1,15 +1,20 @@
 package de.adorsys.bibliothek.domain;
 
+import lombok.*;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@EqualsAndHashCode
+@ToString
 
 
 public class Buch extends Medium{
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String autor;
     private BuchArt art;
@@ -23,6 +28,9 @@ public class Buch extends Medium{
         this.medienNr = Medium.mediumZaehler++;
     }
 
+    public Buch () {
+
+    }
     public Long getId() {
         return id;
     }

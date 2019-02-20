@@ -1,6 +1,9 @@
 package de.adorsys.bibliothek.domain;
 
+
+
 public abstract class Medium {
+
 
     protected static int mediumZaehler = 0;
     protected String name;

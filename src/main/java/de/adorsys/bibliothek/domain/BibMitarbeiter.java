@@ -1,8 +1,23 @@
 package de.adorsys.bibliothek.domain;
 
+
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@EqualsAndHashCode
+@ToString
+
 public class BibMitarbeiter extends BibMitglied {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String lage;
     private String email;
     private String telefonnummer;
@@ -13,6 +28,16 @@ public class BibMitarbeiter extends BibMitglied {
         this.lage = lage;
         this.email = email;
         this.telefonnummer = telefonnummer;
+    }
+    public BibMitarbeiter () {
+
+    }
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getLage() {

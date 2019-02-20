@@ -1,7 +1,22 @@
 package de.adorsys.bibliothek.domain;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@EqualsAndHashCode
+@ToString
+
 public class AusleihVorgang {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private BibMitglied ausleiher;
     private Medium leihObjekt;
     private Datum leihBeginn;
@@ -17,6 +32,13 @@ public class AusleihVorgang {
         //ausleiher.addAusleiVorgang(this);
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
     public BibMitglied getAusleiher() {
         return ausleiher;
     }

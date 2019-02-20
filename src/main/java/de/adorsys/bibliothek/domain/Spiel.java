@@ -1,8 +1,21 @@
 package de.adorsys.bibliothek.domain;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@EqualsAndHashCode
+@ToString
 public class Spiel extends Medium {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private int minSpielerAnz;
     private int maxSpielerAnz;
     private int minAlter;
@@ -14,6 +27,14 @@ public class Spiel extends Medium {
                 this.minSpielerAnz = minSpielerAnz;
                 this.maxSpielerAnz = maxSpielerAnz;
                 this.minAlter = minAlter;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getMinSpielerAnz() {
